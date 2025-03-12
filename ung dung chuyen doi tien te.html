@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Ứng dụng chuyển đổi tiền tệ</title>
+  <style>
+      body {
+          font-family: Arial, sans-serif;
+          text-align: center;
+          margin: 50px;
+      }
+      select, input, button {
+          padding: 10px;
+          margin: 5px;
+      }
+      #result {
+          font-weight: bold;
+          color: blue;
+      }
+  </style>
+</head>
+<body>
+
+<h2>Ứng dụng chuyển đổi tiền tệ</h2>
+
+<label for="amount">Amount: </label>
+<input type="number" id="amount" value="1" min="1">
+
+<label for="fromCurrency">From Currency: </label>
+<select id="fromCurrency">
+  <option value="VND">Vietnam</option>
+  <option value="USD">USD</option>
+  <option value="EUR">Euro</option>
+</select>
+
+<label for="toCurrency">To Currency: </label>
+<select id="toCurrency">
+  <option value="VND">Vietnam</option>
+  <option value="USD">USD</option>
+  <option value="EUR">Euro</option>
+</select>
+
+<button onclick="convertCurrency()">Convert</button>
+
+<p>Result: <span id="result">0</span></p>
+
+<script>
+  function convertCurrency() {
+    let amount = parseFloat(document.getElementById("amount").value);
+    let fromCurrency = document.getElementById("fromCurrency").value;
+    let toCurrency = document.getElementById("toCurrency").value;
+
+    // Tỉ giá tiền tệ cố định
+    let exchangeRates = {
+      "VND": { "USD": 0.000043, "EUR": 0.000039, "VND": 1 },
+      "USD": { "VND": 23300, "EUR": 0.91, "USD": 1 },
+      "EUR": { "VND": 25500, "USD": 1.10, "EUR": 1 }
+    };
+
+    // Tính toán chuyển đổi
+    let convertedAmount = amount * exchangeRates[fromCurrency][toCurrency];
+
+    // Hiển thị kết quả
+    document.getElementById("result").innerText = convertedAmount.toFixed(6) + " " + toCurrency;
+  }
+</script>
+
+</body>
+</html>
