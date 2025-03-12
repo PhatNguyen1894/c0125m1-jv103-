@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Order Form</title>
+  <style>
+      body {
+          font-family: "Lucida Grande", "Lucida Sans Unicode", Tahoma, sans-serif;
+          background-color: #f4f4f4;
+          width: 50%;
+          margin: auto;
+          padding: 20px;
+      }
+      .container {
+          background: white;
+          padding: 20px;
+          border-radius: 10px;
+          box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+          color: #333;
+      }
+      input, select {
+          width: 100%;
+          padding: 8px;
+          margin: 5px 0;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+      }
+      .radio-group {
+          margin: 10px 0;
+      }
+      button {
+          background-color: #28a745;
+          color: white;
+          padding: 10px;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+      }
+      button:hover {
+          background-color: #218838;
+      }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>Order Form</h1>
+  <form action="#" method="POST">
+    <label for="product">What would you like to buy?</label>
+    <select id="product" name="product">
+      <option value="A">A</option>
+      <option value="B">B</option>
+      <option value="C">C</option>
+    </select>
+
+    <p>How many would you like to order?</p>
+    <div class="radio-group">
+      <input type="radio" id="option1" name="quantity" value="10">
+      <label for="option1">1 - $10</label><br>
+
+      <input type="radio" id="option2" name="quantity" value="20">
+      <label for="option2">2 - $20</label><br>
+
+      <input type="radio" id="option3" name="quantity" value="25">
+      <label for="option3">3 - $25</label>
+    </div>
+
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" placeholder="FirstName LastName" required>
+
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" required>
+
+    <label for="phone">Phone Number</label>
+    <input type="tel" id="phone" name="phone" required>
+
+    <button type="submit">Submit</button>
+  </form>
+</div>
+</body>
+</html>
