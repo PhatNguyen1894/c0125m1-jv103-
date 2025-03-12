@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Tính điểm trung bình</title>
+  <script>
+    function tinhDiem() {
+      let vatLy = parseFloat(prompt("Nhập điểm Vật lý:"));
+      let hoaHoc = parseFloat(prompt("Nhập điểm Hóa học:"));
+      let sinhHoc = parseFloat(prompt("Nhập điểm Sinh học:"));
+
+      let tongDiem = vatLy + hoaHoc + sinhHoc;
+      let diemTrungBinh = tongDiem / 3;
+
+      alert("Tổng điểm: " + tongDiem);
+      alert("Điểm trung bình: " + diemTrungBinh.toFixed(2));
+    }
+  </script>
+</head>
+<body>
+<button onclick="tinhDiem()">Tính Điểm</button>
+</body>
+</html>
