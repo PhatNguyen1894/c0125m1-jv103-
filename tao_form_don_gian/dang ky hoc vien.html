@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Form Đăng Ký Học Viên</title>
+  <style>
+      body {
+          font-family: Arial, sans-serif;
+          text-align: center;
+          background-color: #ffffcc;
+      }
+      .container {
+          width: 50%;
+          background: #ffff99;
+          padding: 20px;
+          border-radius: 10px;
+          margin: auto;
+      }
+      form {
+          background: white;
+          padding: 20px;
+          border-radius: 10px;
+          color: black;
+          text-align: left;
+      }
+      label {
+          font-weight: bold;
+      }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>ĐĂNG KÝ HỌC VIÊN</h2>
+  <form>
+    <label>Họ và tên:</label>
+    <input type="text" name="fullname"><br><br>
+
+    <label>Ngày sinh:</label>
+    <input type="date" name="dob"><br><br>
+
+    <label>Giới tính:</label>
+    <input type="radio" name="gender" value="Nam"> Nam
+    <input type="radio" name="gender" value="Nữ"> Nữ <br><br>
+
+    <label>Địa chỉ:</label><br>
+    <textarea name="address" rows="3" cols="30"></textarea><br><br>
+
+    <label>Lớp:</label>
+    <select name="class">
+      <option>-- Chọn lớp --</option>
+      <option>Lớp 10</option>
+      <option>Lớp 11</option>
+      <option>Lớp 12</option>
+    </select><br><br>
+
+    <label>Email:</label>
+    <input type="email" name="email"><br><br>
+
+    <label>Điện thoại:</label>
+    <input type="text" name="phone"><br><br>
+
+    <input type="submit" value="Đăng ký">
+    <input type="reset" value="Nhập lại">
+  </form>
+</div>
+
+</body>
+</html>
