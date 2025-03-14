@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài 5 - Xếp loại học lực</title>
+</head>
+<body>
+<h2>Bài 5: Xếp loại học lực</h2>
+<label for="score">Nhập điểm bài kiểm tra:</label>
+<input type="number" id="score">
+<br>
+<button onclick="assignGrade()">Xếp loại</button>
+<p id="result"></p>
+
+<script>
+    function assignGrade() {
+        var score = parseInt(document.getElementById("score").value);
+        var result = document.getElementById("result");
+
+        if (score >= 8) {
+            result.innerText = "Giỏi";
+        } else if (score >= 6.5) {
+            result.innerText = "Khá";
+        } else if (score >= 5) {
+            result.innerText = "Trung bình";
+        } else {
+            result.innerText = "Yếu";
+        }
+    }
+</script>
+</body>
+</html>
