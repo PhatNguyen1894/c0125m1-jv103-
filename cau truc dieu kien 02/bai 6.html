@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giải phương trình bậc 1</title>
+</head>
+<body>
+<h2>Giải phương trình bậc 1</h2>
+<label for="a1">Nhập hệ số a:</label>
+<input type="number" id="a1">
+<br>
+<label for="b1">Nhập hệ số b:</label>
+<input type="number" id="b1">
+<br>
+<button onclick="solveLinearEquation()">Giải phương trình</button>
+<p id="result"></p>
+
+<script>
+  function solveLinearEquation() {
+    var a = parseFloat(document.getElementById("a1").value);
+    var b = parseFloat(document.getElementById("b1").value);
+    var result = document.getElementById("result");
+
+    if (a === 0) {
+      if (b === 0) {
+        result.innerText = "Phương trình có vô số nghiệm.";
+      } else {
+        result.innerText = "Phương trình vô nghiệm.";
+      }
+    } else {
+      var x = -b / a;
+      result.innerText = "Nghiệm của phương trình là: x = " + x.toFixed(2);
+    }
+  }
+</script>
+</body>
+</html>
