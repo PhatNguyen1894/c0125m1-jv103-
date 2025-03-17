@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Bài 5: Tổng 20 số Fibonacci</title>
+</head>
+<body>
+
+<h1>Bài 5: Tính tổng 20 số Fibonacci</h1>
+<button onclick="sumFibonacci()">Tính tổng</button>
+<div id="output"></div>
+
+<script>
+  function sumFibonacci() {
+    let fib = [0, 1], sum = 1;
+    for (let i = 2; i < 20; i++) {
+      fib[i] = fib[i - 1] + fib[i - 2];
+      sum += fib[i];
+    }
+    output("Tổng 20 số Fibonacci: " + sum);
+  }
+
+  function output(text) {
+    document.getElementById("output").innerHTML = text;
+  }
+</script>
+
+</body>
+</html>
