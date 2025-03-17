@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Bài 1: Đếm từ 1 đến 100</title>
+</head>
+<body>
+
+<h1>Bài 1: Đếm từ 1 đến 100</h1>
+<button onclick="countTo100()">Bắt đầu đếm</button>
+<div id="output"></div>
+
+<script>
+  function countTo100() {
+    let result = "";
+    for (let i = 1; i <= 100; i++) {
+      result += i + " ";
+      if (i === 99) {
+        result += "<br><strong>Hoàn thành!</strong>";
+      }
+    }
+    document.getElementById("output").innerHTML = result;
+  }
+</script>
+
+</body>
+</html>
