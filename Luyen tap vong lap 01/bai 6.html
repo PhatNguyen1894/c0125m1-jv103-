@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Bài 6: Tổng số chia hết cho 7</title>
+</head>
+<body>
+
+<h1>Bài 6: Tính tổng các số chia hết cho 7</h1>
+<button onclick="sumDivisibleBy7()">Tính tổng</button>
+<div id="output"></div>
+
+<script>
+  function sumDivisibleBy7() {
+    let sum = 0;
+    for (let i = 1; i <= 100; i++) {
+      if (i % 7 === 0) {
+        sum += i;
+      }
+    }
+    output("Tổng các số chia hết cho 7 từ 1 đến 100: " + sum);
+  }
+
+  function output(text) {
+    document.getElementById("output").innerHTML = text;
+  }
+</script>
+
+</body>
+</html>
