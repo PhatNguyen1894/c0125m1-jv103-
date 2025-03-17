@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Bài 4: Thêm hàm vào chương trình</title>
+</head>
+<body>
+
+<h1>Bài 4: Thêm hàm vào chương trình</h1>
+<button onclick="calculate()">Tính toán</button>
+<div id="output"></div>
+
+<script>
+  function addNumbers() {
+    let firstNum = 4;
+    let secondNum = 8;
+    return firstNum + secondNum;
+  }
+
+  function calculate() {
+    let result = addNumbers();
+    document.getElementById("output").innerHTML = `Tổng hai số: ${result}`;
+  }
+</script>
+
+</body>
+</html>

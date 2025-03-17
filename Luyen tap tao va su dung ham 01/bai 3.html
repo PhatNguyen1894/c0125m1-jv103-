@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Bài 3: So sánh hai số</title>
+</head>
+<body>
+
+<h1>Bài 3: So sánh hai số</h1>
+<button onclick="compareNumbers()">Nhập hai số</button>
+<div id="output"></div>
+
+<script>
+  function compare(a, b) {
+    if (a > b) {
+      alert("Số thứ nhất lớn hơn số thứ hai.");
+    } else {
+      return a + b;
+    }
+  }
+
+  function compareNumbers() {
+    let a = parseInt(prompt("Nhập số thứ nhất:"));
+    let b = parseInt(prompt("Nhập số thứ hai:"));
+    let result = compare(a, b);
+    if (result !== undefined) {
+      document.getElementById("output").innerHTML = `Tổng hai số: ${result}`;
+    }
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Bài 2: Tăng giá trị số</title>
+</head>
+<body>
+
+<h1>Bài 2: Tăng giá trị số</h1>
+<button onclick="increaseNumber()">Nhập số</button>
+<div id="output"></div>
+
+<script>
+  function increase(n) {
+    return n + 1;
+  }
+
+  function increaseNumber() {
+    let num = parseInt(prompt("Nhập số:"));
+    document.getElementById("output").innerHTML = `Giá trị sau khi tăng: ${increase(num)}`;
+  }
+</script>
+
+</body>
+</html>
