@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Bài 3: Chuyển đổi chữ hoa/thường</title>
+</head>
+<body>
+
+<h1>Bài 3: Chuyển đổi chữ hoa và chữ thường</h1>
+<button onclick="swapCase()">Nhập chuỗi</button>
+<div id="output"></div>
+
+<script>
+  function swapCase() {
+    let str = prompt("Nhập một chuỗi:");
+    if (!str) {
+      alert("Vui lòng nhập một chuỗi hợp lệ!");
+      return;
+    }
+
+    let result = str.split("").map(char => {
+      return char === char.toUpperCase() ? char.toLowerCase() : char.toUpperCase();
+    }).join("");
+
+    document.getElementById("output").innerHTML = `Kết quả: ${result}`;
+  }
+</script>
+
+</body>
+</html>

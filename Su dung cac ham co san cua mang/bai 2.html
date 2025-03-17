@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Bài 2: Chèn dấu "-" giữa các số chẵn</title>
+</head>
+<body>
+
+<h1>Bài 2: Chèn dấu "-" giữa các số chẵn</h1>
+<button onclick="insertDashes()">Nhập số</button>
+<div id="output"></div>
+
+<script>
+  function insertDashes() {
+    let num = prompt("Nhập một chuỗi số:");
+    if (!num || isNaN(num)) {
+      alert("Vui lòng nhập số hợp lệ!");
+      return;
+    }
+
+    let result = num.split("").map((digit, index, arr) => {
+      if (index > 0 && digit % 2 === 0 && arr[index - 1] % 2 === 0) {
+        return "-" + digit;
+      }
+      return digit;
+    }).join("");
+
+    document.getElementById("output").innerHTML = `Kết quả: ${result}`;
+  }
+</script>
+
+</body>
+</html>

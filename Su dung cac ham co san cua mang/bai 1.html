@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Bài 1: Nối các phần tử trong mảng</title>
+</head>
+<body>
+
+<h1>Bài 1: Nối các phần tử trong mảng</h1>
+<button onclick="joinArray()">Thực hiện</button>
+<div id="output"></div>
+
+<script>
+  function joinArray() {
+    let myColor = ["Red", "Green", "White", "Black"];
+    let result = myColor.join(",");
+    document.getElementById("output").innerHTML = `Kết quả: ${result}`;
+  }
+</script>
+
+</body>
+</html>
