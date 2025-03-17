@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Bài 2: Tính giai thừa</title>
+</head>
+<body>
+
+<h1>Bài 2: Tính giai thừa</h1>
+<button onclick="calculateFactorial()">Nhập số</button>
+<div id="output"></div>
+
+<script>
+  function calculateFactorial() {
+    let n = parseInt(prompt("Nhập số nguyên dương:"));
+    if (n < 0 || isNaN(n)) {
+      alert("Vui lòng nhập số nguyên dương!");
+      return;
+    }
+
+    let fact = 1;
+    for (let i = 1; i <= n; i++) {
+      fact *= i;
+    }
+
+    document.getElementById("output").innerHTML = `Giai thừa của ${n} là: ${fact}`;
+  }
+</script>
+
+</body>
+</html>

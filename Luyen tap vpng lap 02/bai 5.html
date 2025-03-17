@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Bài 5: Tính lãi ngân hàng</title>
+</head>
+<body>
+
+<h1>Bài 5: Tính lãi ngân hàng</h1>
+<button onclick="calculateInterest()">Tính toán</button>
+<div id="output"></div>
+
+<script>
+  function calculateInterest() {
+    let principal = parseFloat(prompt("Nhập số tiền ban đầu:"));
+    let months = parseInt(prompt("Nhập số tháng gửi:"));
+    let rate = parseFloat(prompt("Nhập lãi suất hàng tháng (%):"));
+
+    if (isNaN(principal) || isNaN(months) || isNaN(rate) || principal <= 0 || months <= 0 || rate <= 0) {
+      alert("Vui lòng nhập dữ liệu hợp lệ!");
+      return;
+    }
+
+    let total = principal * Math.pow((1 + rate / 100), months);
+    document.getElementById("output").innerHTML = `Số tiền sau ${months} tháng là: ${total.toFixed(2)} VND`;
+  }
+</script>
+
+</body>
+</html>

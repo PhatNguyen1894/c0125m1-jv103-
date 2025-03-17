@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Bài 4: In hình chữ nhật</title>
+</head>
+<body>
+
+<h1>Bài 4: In hình chữ nhật</h1>
+<button onclick="printRectangle()">Hiển thị</button>
+<pre id="output"></pre>
+
+<script>
+  function printRectangle() {
+    let rows = 5, cols = 20, result = "";
+    for (let i = 0; i < rows; i++) {
+      for (let j = 0; j < cols; j++) {
+        if (i === 0 || i === rows - 1 || j === 0 || j === cols - 1) {
+          result += "*";
+        } else {
+          result += " ";
+        }
+      }
+      result += "\n";
+    }
+    document.getElementById("output").textContent = result;
+  }
+</script>
+
+</body>
+</html>

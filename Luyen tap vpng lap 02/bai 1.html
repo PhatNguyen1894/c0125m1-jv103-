@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Bài 1: In dãy Fibonacci</title>
+</head>
+<body>
+
+<h1>Bài 1: In dãy Fibonacci</h1>
+<button onclick="printFibonacci()">Hiển thị</button>
+<div id="output"></div>
+
+<script>
+  function printFibonacci() {
+    let n = 20; // Số lượng số Fibonacci
+    let fib = [0, 1], result = "0, 1";
+    for (let i = 2; i < n; i++) {
+      fib[i] = fib[i - 1] + fib[i - 2];
+      result += ", " + fib[i];
+    }
+    document.getElementById("output").innerHTML = result;
+  }
+</script>
+
+</body>
+</html>

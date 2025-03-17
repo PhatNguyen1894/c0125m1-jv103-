@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Bài 3: In tam giác vuông</title>
+</head>
+<body>
+
+<h1>Bài 3: In tam giác vuông</h1>
+<button onclick="printTriangle()">Hiển thị</button>
+<pre id="output"></pre>
+
+<script>
+  function printTriangle() {
+    let n = 5, result = "";
+    for (let i = 1; i <= n; i++) {
+      result += "*".repeat(i) + "\n";
+    }
+    document.getElementById("output").textContent = result;
+  }
+</script>
+
+</body>
+</html>

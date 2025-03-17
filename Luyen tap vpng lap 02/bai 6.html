@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Bài 6: In hình trái tim</title>
+</head>
+<body>
+
+<h1>Bài 6: In hình trái tim</h1>
+<button onclick="printHeart()">Hiển thị</button>
+<pre id="output"></pre>
+
+<script>
+  function printHeart() {
+    let heart = `
+  ***   ***
+ ***** *****
+ ***********
+  *********
+   *******
+    *****
+     ***
+      * `;
+    document.getElementById("output").textContent = heart;
+  }
+</script>
+
+</body>
+</html>
