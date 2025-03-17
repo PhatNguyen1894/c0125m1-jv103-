@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Từ điển Anh - Việt</title>
+</head>
+<body>
+
+<h1>Từ điển Anh - Việt</h1>
+
+<input type="text" id="wordInput" placeholder="Nhập từ tiếng Anh">
+<button onclick="translateWord()">Dịch</button>
+
+<div id="output"></div>
+
+<script>
+  function translateWord() {
+    let englishWords = ["hello", "goodbye", "cat", "dog", "love", "computer"];
+    let vietnameseWords = ["xin chào", "tạm biệt", "mèo", "chó", "yêu", "máy tính"];
+
+    let inputWord = document.getElementById("wordInput").value.toLowerCase();
+    let index = englishWords.indexOf(inputWord);
+
+    if (index !== -1) {
+      document.getElementById("output").innerHTML = `Nghĩa của từ "<strong>${inputWord}</strong>" là: <strong>${vietnameseWords[index]}</strong>`;
+    } else {
+      document.getElementById("output").innerHTML = "Không tìm thấy!";
+    }
+  }
+</script>
+
+</body>
+</html>
