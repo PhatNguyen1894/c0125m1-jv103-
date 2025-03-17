@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Bài 9: Nối hai mảng</title>
+</head>
+<body>
+
+<h1>Bài 9: Nối hai mảng</h1>
+<button onclick="mergeArrays()">Thực hiện</button>
+<div id="output"></div>
+
+<script>
+  function mergeArrays() {
+    let a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+    let b = [11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+    let c = a.concat(b);
+    document.getElementById("output").innerHTML = `Mảng sau khi nối: [${c.join(", ")}]`;
+  }
+</script>
+
+</body>
+</html>

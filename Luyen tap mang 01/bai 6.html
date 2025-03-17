@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Bài 6: Kiểm tra số nguyên</title>
+</head>
+<body>
+
+<h1>Bài 6: Kiểm tra số nguyên trong mảng</h1>
+<button onclick="checkNumber()">Nhập số</button>
+<div id="output"></div>
+
+<script>
+  function checkNumber() {
+    let numbers = [5, 12, 8, 20, 33, 7, 18, 25, 3, 10];
+    let v = parseInt(prompt("Nhập số cần tìm:"));
+    let message = numbers.includes(v) ? `"${v}" is in the array.` : `"${v}" is not in the array.`;
+    document.getElementById("output").innerHTML = message;
+  }
+</script>
+
+</body>
+</html>

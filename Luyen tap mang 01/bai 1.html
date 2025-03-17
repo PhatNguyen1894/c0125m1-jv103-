@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Bài 1: Đếm số phần tử lớn hơn hoặc bằng 10</title>
+</head>
+<body>
+
+<h1>Bài 1: Đếm số phần tử lớn hơn hoặc bằng 10</h1>
+<button onclick="countGreaterThan10()">Thực hiện</button>
+<div id="output"></div>
+
+<script>
+  function countGreaterThan10() {
+    let numbers = [5, 12, 8, 20, 33, 7, 18, 25, 3, 10];
+    let count = numbers.filter(num => num >= 10).length;
+    document.getElementById("output").innerHTML = `Số phần tử >= 10: ${count}`;
+  }
+</script>
+
+</body>
+</html>

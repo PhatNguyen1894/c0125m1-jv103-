@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Bài 8: Sắp xếp mảng giảm dần</title>
+</head>
+<body>
+
+<h1>Bài 8: Sắp xếp mảng giảm dần</h1>
+<button onclick="sortArray()">Thực hiện</button>
+<div id="output"></div>
+
+<script>
+  function sortArray() {
+    let numbers = [5, 12, 8, 20, 33, 7, 18, 25, 3, 10];
+    numbers.sort((a, b) => b - a);
+    document.getElementById("output").innerHTML = `Mảng sau khi sắp xếp giảm dần: [${numbers.join(", ")}]`;
+  }
+</script>
+
+</body>
+</html>

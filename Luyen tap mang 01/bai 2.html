@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Bài 2: Tìm phần tử lớn nhất</title>
+</head>
+<body>
+
+<h1>Bài 2: Tìm phần tử lớn nhất</h1>
+<button onclick="findMax()">Thực hiện</button>
+<div id="output"></div>
+
+<script>
+  function findMax() {
+    let numbers = [5, 12, 8, 20, 33, 7, 18, 25, 3, 10];
+    let max = Math.max(...numbers);
+    let index = numbers.indexOf(max);
+    document.getElementById("output").innerHTML = `Số lớn nhất: ${max} tại vị trí ${index}`;
+  }
+</script>
+
+</body>
+</html>

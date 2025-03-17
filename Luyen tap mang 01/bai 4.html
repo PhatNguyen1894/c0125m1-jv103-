@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Bài 4: Đảo ngược mảng</title>
+</head>
+<body>
+
+<h1>Bài 4: Đảo ngược mảng</h1>
+<button onclick="reverseArray()">Thực hiện</button>
+<div id="output"></div>
+
+<script>
+  function reverseArray() {
+    let numbers = [5, 12, 8, 20, 33, 7, 18, 25, 3, 10];
+    let reversed = numbers.reverse();
+    document.getElementById("output").innerHTML = `Mảng đảo ngược: [${reversed.join(", ")}]`;
+  }
+</script>
+
+</body>
+</html>

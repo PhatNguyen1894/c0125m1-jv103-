@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Bài 5: Đếm số nguyên âm</title>
+</head>
+<body>
+
+<h1>Bài 5: Đếm số nguyên âm trong chuỗi</h1>
+<button onclick="countNegativeNumbers()">Thực hiện</button>
+<div id="output"></div>
+
+<script>
+  function countNegativeNumbers() {
+    let numbers = [-5, 12, -8, 20, 33, -7, 18, 25, -3, 10];
+    let count = numbers.filter(num => num < 0).length;
+    document.getElementById("output").innerHTML = `Số nguyên âm: ${count}`;
+  }
+</script>
+
+</body>
+</html>
