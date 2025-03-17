@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Bài 7: Hoán đổi hai số</title>
+</head>
+<body>
+
+<h1>Bài 7: Hoán đổi hai số</h1>
+<button onclick="swapNumbers()">Nhập hai số</button>
+<div id="output"></div>
+
+<script>
+  function swap(a, b) {
+    return [b, a];
+  }
+
+  function swapNumbers() {
+    let a = parseInt(prompt("Nhập số thứ nhất:"));
+    let b = parseInt(prompt("Nhập số thứ hai:"));
+    let result = swap(a, b);
+    document.getElementById("output").innerHTML = `Sau khi hoán đổi: a = ${result[0]}, b = ${result[1]}`;
+  }
+</script>
+
+</body>
+</html>

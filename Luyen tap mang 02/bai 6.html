@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Bài 6: Kiểm tra số nguyên dương</title>
+</head>
+<body>
+
+<h1>Bài 6: Kiểm tra số nguyên dương</h1>
+<button onclick="checkPositive()">Nhập số</button>
+<div id="output"></div>
+
+<script>
+  function isPositive(n) {
+    return n > 0;
+  }
+
+  function checkPositive() {
+    let num = parseInt(prompt("Nhập số:"));
+    document.getElementById("output").innerHTML = isPositive(num) ? "Là số nguyên dương" : "Không phải số nguyên dương";
+  }
+</script>
+
+</body>
+</html>

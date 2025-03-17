@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Bài 5: Tìm số nguyên nhỏ nhất</title>
+</head>
+<body>
+
+<h1>Bài 5: Tìm số nguyên nhỏ nhất</h1>
+<button onclick="findMin()">Nhập số</button>
+<div id="output"></div>
+
+<script>
+  function findMin(a, b, c) {
+    return Math.min(a, b, c);
+  }
+
+  function findMin() {
+    let a = parseInt(prompt("Nhập số thứ nhất:"));
+    let b = parseInt(prompt("Nhập số thứ hai:"));
+    let c = parseInt(prompt("Nhập số thứ ba:"));
+    document.getElementById("output").innerHTML = `Số nhỏ nhất là: ${findMin(a, b, c)}`;
+  }
+</script>
+
+</body>
+</html>
