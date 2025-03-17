@@ -2,9 +2,36 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính giá điện</title>
 </head>
 <body>
+
+<h2>Tính giá điện</h2>
+<label for="units">Nhập số điện tiêu thụ (kWh):</label>
+<input type="number" id="units" min="0">
+<br><br>
+<button onclick="calculateElectricityBill()">Tính tiền điện</button>
+<p id="result"></p>
+
+<script>
+    function calculateElectricityBill() {
+        var units = parseFloat(document.getElementById("units").value);
+        var bill = 0;
+
+        if (units <= 50) {
+            bill = units * 1000;
+        } else if (units <= 100) {
+            bill = 50 * 1000 + (units - 50) * 1200;
+        } else if (units <= 200) {
+            bill = 50 * 1000 + 50 * 1200 + (units - 100) * 1500;
+        } else {
+            bill = 50 * 1000 + 50 * 1200 + 100 * 1500 + (units - 200) * 2000;
+        }
+
+        document.getElementById("result").innerText = "Tiền điện phải trả: " + bill.toFixed(2) + " VND";
+    }
+</script>
 
 </body>
 </html>
