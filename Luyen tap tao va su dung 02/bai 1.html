@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Bài 1: Tính bình phương</title>
+</head>
+<body>
+
+<h1>Bài 1: Tính bình phương</h1>
+<button onclick="calculateSquare()">Nhập số</button>
+<div id="output"></div>
+
+<script>
+  function square(n) {
+    return n * n;
+  }
+
+  function calculateSquare() {
+    let num = parseFloat(prompt("Nhập số cần tính bình phương:"));
+    document.getElementById("output").innerHTML = `Bình phương của ${num} là ${square(num)}`;
+  }
+</script>
+
+</body>
+</html>

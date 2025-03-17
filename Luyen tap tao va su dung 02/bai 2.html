@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Bài 2: Tính diện tích & chu vi hình tròn</title>
+</head>
+<body>
+
+<h1>Bài 2: Tính diện tích & chu vi hình tròn</h1>
+<button onclick="calculateCircle()">Nhập bán kính</button>
+<div id="output"></div>
+
+<script>
+  function areaCircle(radius) {
+    return Math.PI * radius * radius;
+  }
+
+  function circumferenceCircle(radius) {
+    return 2 * Math.PI * radius;
+  }
+
+  function calculateCircle() {
+    let r = parseFloat(prompt("Nhập bán kính hình tròn:"));
+    document.getElementById("output").innerHTML =
+      `Diện tích: ${areaCircle(r).toFixed(2)} <br> Chu vi: ${circumferenceCircle(r).toFixed(2)}`;
+  }
+</script>
+
+</body>
+</html>

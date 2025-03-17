@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Bài 4: Kiểm tra ký tự số</title>
+</head>
+<body>
+
+<h1>Bài 4: Kiểm tra ký tự số</h1>
+<button onclick="checkDigit()">Nhập ký tự</button>
+<div id="output"></div>
+
+<script>
+  function isDigit(char) {
+    return !isNaN(char);
+  }
+
+  function checkDigit() {
+    let char = prompt("Nhập một ký tự:");
+    document.getElementById("output").innerHTML = isDigit(char) ? "Là số" : "Không phải số";
+  }
+</script>
+
+</body>
+</html>
