@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Kiểm tra số nguyên tố</title>
+</head>
+<body>
+
+<h1>Hàm kiểm tra số nguyên tố</h1>
+<button onclick="checkPrime()">Nhập số kiểm tra</button>
+<button onclick="findPrimes()">Tìm số nguyên tố &lt; 10.000</button>
+<div id="output"></div>
+
+<script>
+  function isPrime(number) {
+    if (number < 2) return false;
+    for (let i = 2; i <= Math.sqrt(number); i++) {
+      if (number % i === 0) return false;
+    }
+    return true;
+  }
+
+  function checkPrime() {
+    let num = parseInt(prompt("Nhập số cần kiểm tra:"));
+    if (isNaN(num)) {
+      document.getElementById("output").innerHTML = "Vui lòng nhập một số hợp lệ.";
+      return;
+    }
+    let result = isPrime(num) ? `${num} là số nguyên tố.` : `${num} không phải là số nguyên tố.`;
+    document.getElementById("output").innerHTML = result;
+  }
+
+  function findPrimes() {
+    let primes = [];
+    for (let i = 2; i < 10000; i++) {
+      if (isPrime(i)) {
+        primes.push(i);
+      }
+    }
+    document.getElementById("output").innerHTML = `Các số nguyên tố nhỏ hơn 10.000: <br>${primes.join(", ")}`;
+  }
+</script>
+
+</body>
+</html>
