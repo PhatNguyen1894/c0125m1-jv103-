@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rectangle</title>
+  <style>
+      canvas {
+          border: 1px solid black;
+      }
+  </style>
+</head>
+<body>
+<h1>Hình chữ nhật</h1>
+<label for="length">Chiều dài:</label>
+<input type="number" id="length" />
+<label for="width">Chiều rộng:</label>
+<input type="number" id="width" />
+<button onclick="drawRectangle()">Vẽ hình chữ nhật</button>
+<p id="result"></p>
+<canvas id="canvas" width="400" height="400"></canvas>
+
+<script>
+  class Rectangle {
+    constructor(length, width) {
+      this.length = length;
+      this.width = width;
+    }
+
+    // Phương thức tính diện tích
+    area() {
+      return this.length * this.width;
+    }
+
+    // Phương thức tính chu vi
+    perimeter() {
+      return 2 * (this.length + this.width);
+    }
+
+    // Phương thức vẽ hình chữ nhật trên canvas
+    draw() {
+      const canvas = document.getElementById("canvas");
+      const ctx = canvas.getContext("2d");
+      ctx.clearRect(0, 0, canvas.width, canvas.height);  // Xóa canvas trước khi vẽ lại
+      ctx.strokeRect(50, 50, this.width, this.length); // Vẽ hình chữ nhật
+    }
+  }
+
+  // Hàm vẽ hình chữ nhật
+  function drawRectangle() {
+    const length = document.getElementById("length").value;
+    const width = document.getElementById("width").value;
+
+    // Tạo đối tượng Rectangle
+    const rectangle = new Rectangle(length, width);
+
+    // Hiển thị diện tích và chu vi
+    document.getElementById("result").innerText = `Diện tích: ${rectangle.area()} | Chu vi: ${rectangle.perimeter()}`;
+
+    // Vẽ hình chữ nhật trên canvas
+    rectangle.draw();
+  }
+</script>
+</body>
+</html>

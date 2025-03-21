@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Temperature Conversion</title>
+</head>
+<body>
+<h1>Chuyển đổi nhiệt độ</h1>
+<label for="celsius">Nhập nhiệt độ (Celsius):</label>
+<input type="number" id="celsius" />
+<button onclick="convertTemperature()">Chuyển đổi</button>
+<p id="result"></p>
+
+<script>
+  class Temperature {
+    constructor(celsius) {
+      this.celsius = celsius;
+    }
+
+    // Phương thức chuyển đổi Celsius sang Fahrenheit
+    toFahrenheit() {
+      return (this.celsius * 9 / 5) + 32;
+    }
+
+    // Phương thức chuyển đổi Celsius sang Kelvin
+    toKelvin() {
+      return this.celsius + 273.15;
+    }
+  }
+
+  function convertTemperature() {
+    let celsius = document.getElementById("celsius").value;
+
+    // Kiểm tra nếu giá trị nhập vào không hợp lệ
+    if (isNaN(celsius)) {
+      document.getElementById("result").innerText = "Vui lòng nhập một giá trị hợp lệ!";
+      return;
+    }
+
+    // Tạo đối tượng Temperature
+    const temp = new Temperature(Number(celsius));
+
+    // Chuyển đổi và hiển thị kết quả
+    let fahrenheit = temp.toFahrenheit();
+    let kelvin = temp.toKelvin();
+
+    document.getElementById("result").innerText = `
+                Nhiệt độ Celsius: ${celsius}°C
+                Nhiệt độ Fahrenheit: ${fahrenheit.toFixed(2)}°F
+                Nhiệt độ Kelvin: ${kelvin.toFixed(2)}K
+            `;
+  }
+</script>
+</body>
+</html>

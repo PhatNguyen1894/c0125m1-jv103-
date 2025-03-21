@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mobile Simulation</title>
+</head>
+<body>
+<h1>Mobile Simulation</h1>
+<button onclick="useMobile()">Sử dụng điện thoại</button>
+<p id="status"></p>
+
+<script>
+  class Mobile {
+    constructor(brand) {
+      this.brand = brand;        // Hãng điện thoại (Nokia, iPhone)
+      this.powerStatus = false;  // Trạng thái điện thoại (tắt/mở)
+      this.batteryLevel = 100;   // Trạng thái pin (100% - 0%)
+      this.inbox = [];           // Hộp thư đến (inbox)
+      this.outbox = [];          // Hộp thư đi (outbox)
+    }
+
+    // Bật điện thoại
+    powerOn() {
+      this.powerStatus = true;
+      console.log("Điện thoại đã được bật.");
+    }
+
+    // Tắt điện thoại
+    powerOff() {
+      this.powerStatus = false;
+      console.log("Điện thoại đã được tắt.");
+    }
+
+    // Kiểm tra trạng thái điện thoại
+    checkPowerStatus() {
+      return this.powerStatus ? "Điện thoại đang bật" : "Điện thoại đang tắt";
+    }
+
+    // Kiểm tra tình trạng pin
+    checkBattery() {
+      return this.batteryLevel;
+    }
+
+    // Nhắn tin
+    sendMessage(message, recipient) {
+      if (this.powerStatus && this.batteryLevel > 0) {
+        this.outbox.push({ recipient: recipient, message: message });
+        this.batteryLevel -= 5;  // Giảm pin khi gửi tin nhắn
+        console.log(`Tin nhắn gửi tới ${recipient}: "${message}"`);
+      } else {
+        console.log("Không thể gửi tin nhắn, điện thoại tắt hoặc hết pin.");
+      }
+    }
+
+    // Nhận tin nhắn
+    receiveMessage(sender, message) {
+      if (this.powerStatus && this.batteryLevel > 0) {
+        this.inbox.push({ sender: sender, message: message });
+        console.log(`Tin nhắn nhận từ ${sender}: "${message}"`);
+      } else {
+        console.log("Không thể nhận tin nhắn, điện thoại tắt hoặc hết pin.");
+      }
+    }
+
+    // Xem hộp thư đến
+    viewInbox() {
+      if (this.powerStatus && this.inbox.length > 0) {
+        this.inbox.forEach(msg => {
+          console.log(`Tin nhắn từ ${msg.sender}: ${msg.message}`);
+        });
+      } else {
+        console.log("Không có tin nhắn nào trong hộp thư đến.");
+      }
+    }
+
+    // Sạc điện thoại
+    charge() {
+      if (this.powerStatus) {
+        this.batteryLevel = 100; // Sạc đầy pin
+        console.log("Điện thoại đã được sạc đầy.");
+      }
+    }
+  }
+
+  // Mô phỏng sử dụng điện thoại
+  function useMobile() {
+    let myPhone = new Mobile("Nokia");
+
+    myPhone.powerOn();
+    console.log(myPhone.checkPowerStatus());
+    console.log(`Pin hiện tại: ${myPhone.checkBattery()}%`);
+
+    myPhone.sendMessage("Chào bạn!", "iPhone");
+    myPhone.receiveMessage("iPhone", "Xin chào, Nokia!");
+    myPhone.viewInbox();
+
+    myPhone.charge();
+    console.log(`Pin sau khi sạc: ${myPhone.checkBattery()}%`);
+  }
+</script>
+</body>
+</html>
