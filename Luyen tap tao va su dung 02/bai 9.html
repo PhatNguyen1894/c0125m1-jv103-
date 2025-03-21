@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kiểm tra ký tự trong mảng</title>
+</head>
+<body>
+<h1>Kiểm tra ký tự trong mảng</h1>
+<label for="charInput">Nhập ký tự:</label>
+<input type="text" id="charInput" maxlength="1" />
+<label for="arrayInput">Nhập mảng ký tự (cách nhau bởi dấu phẩy):</label>
+<input type="text" id="arrayInput" />
+<button onclick="checkCharInArray()">Kiểm tra</button>
+<p id="result"></p>
+
+<script>
+  function checkCharInArray() {
+    let char = document.getElementById('charInput').value;
+    let arrayInput = document.getElementById('arrayInput').value;
+    let array = arrayInput.split(','); // Chuyển chuỗi thành mảng
+
+    if (array.includes(char)) {
+      document.getElementById('result').innerText = `Ký tự '${char}' có trong mảng.`;
+    } else {
+      document.getElementById('result').innerText = `Ký tự '${char}' không có trong mảng.`;
+    }
+  }
+</script>
+</body>
+</html>
