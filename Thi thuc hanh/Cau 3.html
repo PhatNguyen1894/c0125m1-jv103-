@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Tính số ngày trong tháng</title>
+</head>
+<body>
+<label for="dateInput">Nhập tháng và năm (MM/yyyy):</label>
+<input type="text" id="dateInput" placeholder="Ví dụ: 01/2020"><br><br>
+
+<button onclick="calculateDays()">Tính</button>
+<p id="result"></p>
+
+<script>
+  function calculateDays() {
+    const input = document.getElementById('dateInput').value;
+    const [month, year] = input.split('/').map(Number);
+
+    if (month < 1 || month > 12 || isNaN(year)) {
+      document.getElementById('result').textContent = "Vui lòng nhập tháng và năm hợp lệ.";
+      return;
+    }
+
+    let daysInMonth = 31;
+    if (month === 2) {
+      daysInMonth = 28;
+    } else if ([4, 6, 9, 11].includes(month)) {
+      daysInMonth = 30;
+    }
+
+    document.getElementById('result').textContent = `Số ngày trong tháng ${month}/${year}: ${daysInMonth}`;
+  }
+</script>
+</body>
+</html>

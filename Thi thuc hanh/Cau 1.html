@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Tính trung bình cộng</title>
+</head>
+<body>
+<input type="text" id="numbersInput" placeholder="Nhập các số, cách nhau bằng dấu phẩy"><br><br>
+<button onclick="calculateAverage()">Tính</button>
+<p id="result"></p>
+
+<script>
+  function calculateAverage() {
+    const input = document.getElementById('numbersInput').value;
+    const numbers = input.split(',').map(num => parseInt(num.trim()));
+
+    let sum = 0, count = 0;
+    for (let num of numbers) {
+      if (num % 3 === 0) {
+        sum += num;
+        count++;
+      }
+    }
+
+    let result;
+    if (count > 0) {
+      result = "Trung bình cộng: " + sum / count;
+    } else {
+      result = "Không có số chia hết cho 3";
+    }
+    document.getElementById('result').textContent = result;
+  }
+</script>
+</body>
+</html>
